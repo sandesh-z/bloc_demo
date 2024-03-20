@@ -1,4 +1,4 @@
-import 'package:bloc_demo/injections/injectable/injections.config.dart';
+import 'package:bloc_demo/injections/injections.config.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
