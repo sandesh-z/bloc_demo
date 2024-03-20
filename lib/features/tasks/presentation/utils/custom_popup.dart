@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/task_bloc/task_bloc.dart'; // Using flutter_bloc package
+import '../bloc/task_bloc/task_bloc.dart';
 
 class CustomPopup extends StatelessWidget {
   final TextEditingController controller = TextEditingController();
@@ -55,8 +55,9 @@ class CustomPopup extends StatelessWidget {
             style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
             onPressed: () {
               final int count = int.tryParse(controller.text) ?? 0;
+              //generate fibonacci numbers
               context.read<TaskBloc>().add(TaskEvent.generateFibonacci(count));
-              Navigator.of(context).pop();
+              Navigator.pop(context);
             },
             child: const Text('Submit', style: TextStyle(color: Colors.white)),
           ),

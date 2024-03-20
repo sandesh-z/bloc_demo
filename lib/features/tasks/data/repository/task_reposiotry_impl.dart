@@ -13,9 +13,9 @@ class TaskRepositoryImpl implements TaskRepository {
   TaskRepositoryImpl(this.source);
 
   @override
-  Future<Either<ApiFailure, TaskModel>> fetchTasks() async {
+  Future<Either<ApiFailure, TaskModel>> fetchTasks({required int skip}) async {
     try {
-      final response = await source.fetchTasks();
+      final response = await source.fetchTasks(skip: skip);
 
       return Right(response);
     } catch (e) {

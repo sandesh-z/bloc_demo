@@ -1,5 +1,5 @@
 import 'package:bloc_demo/features/tasks/presentation/bloc/task_bloc/task_bloc.dart';
-import 'package:bloc_demo/features/tasks/presentation/pages/home.dart';
+import 'package:bloc_demo/features/tasks/presentation/pages/home_page.dart';
 import 'package:bloc_demo/injections/injections.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,7 +22,7 @@ class BlocDemoApp extends StatelessWidget {
         theme: ThemeData(
           useMaterial3: true,
         ),
-        home: const Home(),
+        home: const HomePage(),
       ),
     );
   }

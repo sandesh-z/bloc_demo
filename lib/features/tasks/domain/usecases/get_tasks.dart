@@ -8,20 +8,22 @@ import '../../../../core/network/network.dart';
 import '../entities/task.dart';
 
 @lazySingleton
-class GetTasks implements Usecase<ApiFailure, Task, NoParams> {
+//please note that networkInfo will be initialized with dependency injection with get_it package: see folder lib/injections
+class GetTasks implements Usecase<ApiFailure, Task, int> {
   final TaskRepository repository;
   final NetworkInfo networkInfo;
 
   GetTasks({required this.repository, required this.networkInfo});
 
   @override
-  Future<Either<ApiFailure, Task>> call(NoParams params) async {
+  Future<Either<ApiFailure, Task>> call(int skip) async {
     final isConnected = await networkInfo.isConnected;
+    //return if not connected to internet
     if (!isConnected) {
       return const Left(ApiFailure.noInternetConnection());
     }
 
-    final remoteData = await repository.fetchTasks();
+    final remoteData = await repository.fetchTasks(skip: skip);
 
     return remoteData.fold(
       (failure) {

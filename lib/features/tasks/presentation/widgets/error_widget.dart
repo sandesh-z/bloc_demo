@@ -31,7 +31,7 @@ Widget errorView({
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.error),
+            const Icon(Icons.error, size: 40),
             const SizedBox(height: 8),
             Text(
               errorText,

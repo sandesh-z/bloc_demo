@@ -1,16 +1,34 @@
-# bloc_demo
+# Bloc demo
 
-A new Flutter project.
+A project to demonstrate state management using bloc.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter SDK version 3.19.1
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Installation
+
+1. Clone the repository.
+2. Run `flutter pub get` to install dependencies.
+3. Run `flutter run` to start the application.
+
+### Code generation 
+1. Make sure you have all the dependecies required for this project, see 'pubspec.yaml'
+2. Run `dart run build_runner build` to generate all code related to this project
+
+## Features
+
+- List todo list from mock api : https://dummyjson.com/docs/todos
+- User can toggle status of task
+- pagination
+- fibonacci sequence generation
+
+## Dependencies
+
+- see pubspec.yaml file for all required dependencies.
+
+### Github Url 
+https://github.com/sandesh-z/bloc_demo.git

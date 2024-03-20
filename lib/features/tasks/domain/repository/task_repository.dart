@@ -4,5 +4,5 @@ import 'package:dartz/dartz.dart';
 import '../../../../core/failures/api_failure.dart';
 
 abstract class TaskRepository {
-  Future<Either<ApiFailure, TaskModel>> fetchTasks();
+  Future<Either<ApiFailure, TaskModel>> fetchTasks({required int skip});
 }

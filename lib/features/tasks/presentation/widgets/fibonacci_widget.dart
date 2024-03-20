@@ -9,6 +9,7 @@ class FibonacciWidget extends StatelessWidget {
     return Center(
       child: GridView.builder(
         padding: const EdgeInsets.all(20),
+        //incresing cross-axis count if numbers are large in order to fit inside ui
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: numbers.length > 50 ? 2 : 4),
         itemBuilder: (_, index) => Container(
@@ -21,7 +22,9 @@ class FibonacciWidget extends StatelessWidget {
             child: Text(
               numbers[index].toString(),
               style: TextStyle(
-                  fontSize: numbers.length > 50 ? 12.0 : 16.0,
+                  fontSize: numbers.length > 50
+                      ? 12.0
+                      : 16.0, //making font size small if numbers are large
                   fontWeight: FontWeight.bold,
                   color: Colors.white),
             ),
